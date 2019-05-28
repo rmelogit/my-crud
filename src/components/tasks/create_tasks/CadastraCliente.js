@@ -49,11 +49,11 @@ function CadastraCliente(props) {
                     <Button variant="secondary" onClick={e => setShow(false)}>
                         Close
                     </Button>
-                    <form onSubmit={handleSubmit}>
-                        <Button variant="dark" type="submit">
+
+                        <Button onClick={handleSubmit} variant="dark" type="submit">
                             Cadastrar
                         </Button>
-                    </form>
+                    
                 </Modal.Footer>
             </Modal>
         </div>

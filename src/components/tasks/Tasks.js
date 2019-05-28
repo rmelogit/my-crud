@@ -30,7 +30,7 @@ class Tasks extends Component {
                 <Col xs={{ span: 8, offset: 2 }} className="tasks_list">
                     <p className="title">Cadastrados</p>
                     <List listaClientes={this.listaClientes} clientes={this.state.clientes}/>
-                    <CadastraCliente listaClientes={this.listaClientes}/>
+                    <CadastraCliente/>
                 </Col>
             </Row>
         );
