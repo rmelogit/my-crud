@@ -9,6 +9,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class List extends Component {
 
+    constructor(props) {
+      super(props);
+
+      this.state = {
+        showModal: false,
+        data: '',
+        nome: '',
+        sobrenome: '',
+        sexo: ''
+      }
+   };
+
     close(){
         this.setState({ showModal: false });
     }
@@ -30,6 +42,7 @@ class List extends Component {
                 )
             }
         );
+        this.close();
         this.props.listaClientes();
     }
 
@@ -71,14 +84,14 @@ class List extends Component {
                                     <td className="col-md-10">{cliente.data}</td>
                                     <td className="col-md-10">{cliente.sexo}</td>
                                     <td>
-                                        <a className="edit" href="" onClick={this.open.bind(this,cliente)} size="lg">
+                                        <Button className="edit" href="" onClick={this.open.bind(this,cliente)} size="lg">
                                             <FontAwesomeIcon icon="pen-alt"/>
-                                        </a>
+                                        </Button>
                                     </td>
                                     <td>
-                                        <a className="delete" href="" onClick={() => this.apagaCliente(cliente)} size="lg">
+                                        <Button className="delete" href="" onClick={() => this.apagaCliente(cliente)} size="lg">
                                             <FontAwesomeIcon icon="trash-alt"/>
-                                        </a>
+                                        </Button>
                                     </td>
                                 </tr>;
                             })}
@@ -103,11 +116,11 @@ class List extends Component {
                 <Button variant="secondary" onClick={this.close}>
                     Close
                 </Button>
-                <form onSubmit={this.editaCliente(this.state.id,this.state.nome,this.state.sobrenome,this.state.data,this.state.sexo)}>
-                    <Button variant="dark" type="submit">
+
+                    <Button variant="dark" onClick={() =>this.editaCliente(this.state.id,this.state.nome,this.state.sobrenome,this.state.data,this.state.sexo)}>
                         Editar
                     </Button>
-                </form>
+
             </Modal.Footer>
         </Modal>
             </div>
