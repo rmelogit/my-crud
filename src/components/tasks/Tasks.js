@@ -15,6 +15,7 @@ class Tasks extends Component {
         };
         this.listaClientes = this.listaClientes.bind(this);
         this.buscaClientes = this.buscaClientes.bind(this);
+        this.apagaCliente = this.apagaCliente.bind(this);
         this.handleChangeUPDATE = this.handleChangeUPDATE.bind(this);
         this.handleChangeDELETE = this.handleChangeDELETE.bind(this);
     }
