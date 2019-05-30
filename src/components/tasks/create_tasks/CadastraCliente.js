@@ -50,7 +50,7 @@ function CadastraCliente(props) {
                         Close
                     </Button>
 
-                        <Button onClick={handleSubmit} variant="dark" type="submit">
+                        <Button onClick={e=> handleSubmit(e)} variant="dark" type="submit">
                             Cadastrar
                         </Button>
                     

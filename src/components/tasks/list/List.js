@@ -101,7 +101,7 @@ class List extends Component {
                 </Card>
 
         <Modal show={this.state.showModal}
-               onHide={this.close}
+               onHide={e=> this.close(e)}
                keyboard={true}>
             <Modal.Header closeButton>
                 <Modal.Title>Editar Cliente</Modal.Title>
@@ -113,7 +113,7 @@ class List extends Component {
                 <Form.Control type="text" placeholder="Sexo" value={this.state.sexo || ''} onChange={e => this.mudaSexo(e)} />
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="secondary" onClick={this.close}>
+                <Button variant="secondary" onClick={e=> this.close(e)}>
                     Close
                 </Button>
 
