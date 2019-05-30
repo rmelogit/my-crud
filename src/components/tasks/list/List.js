@@ -46,13 +46,6 @@ class List extends Component {
         this.props.listaClientes();
     }
 
-    async apagaCliente(cliente) {
-        if (window.confirm(`Are you sure you want to delete: "${cliente.nome}"`)) {
-            await fetch(`http://localhost:3000/deletar/${cliente.id}`, {method: 'DELETE'});
-            this.props.listaClientes();
-        }
-    }
-
     mudaNome(e) {
         var value = e.target.value;
         this.setState({nome: value});
@@ -86,11 +79,6 @@ class List extends Component {
                                     <td>
                                         <Button className="edit" href="" onClick={this.open.bind(this,cliente)} size="lg">
                                             <FontAwesomeIcon icon="pen-alt"/>
-                                        </Button>
-                                    </td>
-                                    <td>
-                                        <Button className="delete" href="" onClick={() => this.apagaCliente(cliente)} size="lg">
-                                            <FontAwesomeIcon icon="trash-alt"/>
                                         </Button>
                                     </td>
                                 </tr>;
